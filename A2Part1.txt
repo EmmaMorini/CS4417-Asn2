@@ -61,15 +61,15 @@ Assignment 2
 
 
 ~~Interpreting~~
-1. GLOVE seems to use more word similarity to determine the similarity score between query and documents. That is, the top results returned
-by GLOVE all use 'I' a lot, which was in the original query, and the top results all have the word 'job' in them even if the topic of the tweets
-is not necessarily about a job in the workplace sense. Meanwhile, MINLIM uses semantic meaning to evaluate similarity. The top 25 results all relate
-to job hunting or something similar. Some tweets returned by MINLIM do not even have the word 'job' or 'I' in them, but because their meaning
-relates to job hunting, they are in the top results.
+1.  The top results returned by GLOVE all use 'I' a lot, which was in the original query, and the top results all have the word 'job' in them even if the topic of the tweets
+is not necessarily about a job in the workplace sense. The reason for this may be that GLOVE seems to use more word similarity (i.e. "Training for GloVe is "performed on aggregated global 
+word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space" (https://nlp.stanford.edu/projects/glove/)) 
+to determine the similarity score between query and documents.
 
-Reasons why this may be happening:
-- Training for GloVe is "performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space" (https://nlp.stanford.edu/projects/glove/).
-T
+Meanwhile, for MINLIM the top 25 results all relate to job hunting or something similar. Some tweets returned by MINLIM do not even have the word 'job' or 'I' in them, but because 
+their meaning relates to job hunting, they are in the top results. The reason for this is likely that it uses semantic meaning 
+to evaluate similarity rather than word co-occurrence. 
+
 
 2. I do not think Twitter is using a semantic search technique like the ones we tried because the results of the query on Twitter contain tweets that contain the exact
 words contained in the query. Rather than results generally mentioning word-related topics like what MINLIM returned, Twitter returned tweets
